@@ -28,6 +28,25 @@
         // berdasarkan nilai diameter yang dimasukkan.
         // Nilai volume akan muncul pada isian Volume setelah tombol
         // hitung ditekan.
+        const form = document.getElementById('form');
+        
+        // Menambahkan event listener untuk form submission
+        form.addEventListener('submit', function(event) {
+            // Mencegah form melakukan submit default
+            event.preventDefault();
+            
+            // Mengambil nilai diameter
+            const diameter = document.getElementById('diameter').value;
+            
+            // Menghitung jari-jari (radius = diameter/2)
+            const radius = diameter / 2;
+            
+            // Menghitung volume bola (V = 4/3 × π × r³)
+            const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+            
+            // Menampilkan hasil volume (dibulatkan ke 2 angka desimal)
+            document.getElementById('volume').value = volume.toFixed(2);
+        });
     </script>
 </body>
 

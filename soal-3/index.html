@@ -17,7 +17,16 @@
             // lengkapi fungsi ini untuk dapat menampilkan alert yang berisikan
             // nama depan dan nama belakang sesuai dengan yang diinputkan
             // pada input
-        }
+                // Mencegah form melakukan submit default
+                event.preventDefault();
+                
+                // Mengambil nilai dari input nama depan dan belakang
+                let namaDepan = document.getElementsByName("depan")[0].value;
+                let namaBelakang = document.getElementsByName("belakang")[0].value;
+                
+                // Menampilkan alert dengan nama lengkap
+                alert("Nama Lengkap: " + namaDepan + " " + namaBelakang);
+            }
     </script>
 </body>
 
